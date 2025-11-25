@@ -1,35 +1,36 @@
 # presentation-1
 rock paper scissor
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-// Function to get the name of the move
-const char* get_move_name(int move) {
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <time.h>
+
+    // Function to get the name of the move
+    const char* get_move_name(int move) {
     switch (move) {
         case 0: return "Rock";
         case 1: return "Paper";
         case 2: return "Scissors";
         default: return "Invalid";
     }
-}
+    }
 
-// Function to determine the winner
-// Returns 1 if player1 wins, -1 if player2 wins, 0 if tie
-int determine_winner(int p1_move, int p2_move) {
+    // Function to determine the winner
+    // Returns 1 if player1 wins, -1 if player2 wins, 0 if tie
+    int determine_winner(int p1_move, int p2_move) {
     if (p1_move == p2_move) return 0; // Tie
     if ((p1_move == 0 && p2_move == 2) || // Rock beats Scissors
         (p1_move == 1 && p2_move == 0) || // Paper beats Rock
         (p1_move == 2 && p2_move == 1)) { // Scissors beats Paper
         return 1; // Player 1 wins
     }
-    return -1; // Player 2 wins
-}
+        return -1; // Player 2 wins
+     }
 
-int main() {
+    int main() {
     srand(time(NULL)); // Seed random number generator
-
+   
     printf("Welcome to Rock, Paper, Scissors, Minus One!\n");
     printf("Moves: 0=Rock, 1=Paper, 2=Scissors\n\n");
 
